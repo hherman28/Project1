@@ -14,7 +14,7 @@ imageFilelist=$(find . | grep -E ".+(jpg|png|gif|jpeg)")
 for item in $imageFilelist
 do
     # Determines if the image is in the list of files.
-    grep -R -q $item $fileList
+    grep -R -q $(basename $item) $fileList
     
     # If the current image is not found, path of the image is printed.
      if [ $? -eq 1 ]
